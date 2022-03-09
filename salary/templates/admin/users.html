@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <table>
+        <a href="{% url 'adduser' %}"><button class="btn btn-primary px-4">+Add User</button></a>
+    <tr>
+        <td style="width: 35%;">User</td>
+
+        <td style="width: 10%;">######</td>
+
+    </tr>
+        </table>
+    {% for user in users%}
+        <table>
+
+    <tr>
+        <td style="width: 35%;">{{user.full_name}}</td>
+
+
+        <td style="width: 10%;"> <a href="{%url 'userprofil' user.id %}"><button class="btn-primary">More</button></a></td>
+        <hr>
+    </tr>
+        </table>
+
+
+    {% endfor %}
+
+
+
+
+{% endblock %}
